@@ -3,19 +3,19 @@
 get_header();
 
 while(have_posts()){
-    the_post(); ?>
+    the_post();
+    
+    pageBanner(array(
+      'title' => 'Hello there this is the title',
+      'photo' => 'https://img.freepik.com/darmowe-zdjecie/piekne-ujecie-gor-i-drzew-pokrytych-sniegiem-i-mgla_181624-17590.jpg?w=1380&t=st=1678278560~exp=1678279160~hmac=3f3d3a57430d881e14727e614b00392b344798c4634e1ed0bc84f1ee98e97de2'
+    ));
+    
+    ?>
 
 
 
-    <div class="page-banner">
-      <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/ocean.jpg') ?>)"></div>
-      <div class="page-banner__content container container--narrow">
-        <h1 class="page-banner__title"><?php the_title(); ?></h1>
-        <div class="page-banner__intro">
-          <p>DONT FORGET TO REPLACE ME LATER</p>
-        </div>
-      </div>
-    </div>
+
+
 
     <div class="container container--narrow page-section">
 
