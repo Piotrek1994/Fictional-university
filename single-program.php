@@ -26,7 +26,7 @@ while(have_posts()){
 $relatedProfessors = new WP_Query(array(
   'posts_per_page' => -1,
   'post_type' => 'professor',
-  'orderby' => 'tite',
+  'orderby' => 'title',
   'order' => 'ASC',
   'meta_query' => array(
     array(
@@ -97,6 +97,23 @@ $relatedProfessors = new WP_Query(array(
         
         }
          }
+
+         wp_reset_postdata();
+         $relatedCampuses = get_field('related_campus');
+
+         if($relatedCampuses){
+          echo '<h2 class="headline headline--medium">' . get_the_title() . 'is Available at These Campuses:</h2>';
+
+          echo '<ul class="min-list link-list">';
+          foreach($relatedCampuses as $campus){
+            ?> <li><a href="<?php echo get_the_permalink($campus); ?>"><?php echo get_the_title($campus) ?></a></li> <?php
+
+          }
+          echo '</ul>';
+         }
+
+
+
          ?>
 
     
