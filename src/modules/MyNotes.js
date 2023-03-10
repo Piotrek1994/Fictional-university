@@ -58,9 +58,9 @@ class MyNotes {
   }
 
   updateNote(e) {
-    const thisNote = $(e.target).parents("li")
+    var thisNote = $(e.target).parents("li")
 
-    const ourUpdatedPost = {
+    var ourUpdatedPost = {
       "title": thisNote.find(".note-title-field").val(),
       "content": thisNote.find(".note-body-field").val()
     }
@@ -85,10 +85,10 @@ class MyNotes {
   }
 
   createNote(e) {
-    const ourNewPost = {
+    var ourNewPost = {
       "title": $(".new-note-title").val(),
       "content": $(".new-note-body").val(),
-      "status": "publish"
+      "status": "private"
     }
 
     $.ajax({

@@ -2307,8 +2307,8 @@ class MyNotes {
     });
   }
   updateNote(e) {
-    const thisNote = jquery__WEBPACK_IMPORTED_MODULE_0___default()(e.target).parents("li");
-    const ourUpdatedPost = {
+    var thisNote = jquery__WEBPACK_IMPORTED_MODULE_0___default()(e.target).parents("li");
+    var ourUpdatedPost = {
       "title": thisNote.find(".note-title-field").val(),
       "content": thisNote.find(".note-body-field").val()
     };
@@ -2331,10 +2331,10 @@ class MyNotes {
     });
   }
   createNote(e) {
-    const ourNewPost = {
+    var ourNewPost = {
       "title": jquery__WEBPACK_IMPORTED_MODULE_0___default()(".new-note-title").val(),
       "content": jquery__WEBPACK_IMPORTED_MODULE_0___default()(".new-note-body").val(),
-      "status": "publish"
+      "status": "private"
     };
     jquery__WEBPACK_IMPORTED_MODULE_0___default().ajax({
       beforeSend: xhr => {
